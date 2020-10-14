@@ -4,16 +4,22 @@ const SearchBar = (props) => {
   return (
     <form>
       <label>
-        State
-        <select>
-          <option>States</option>
-        </select>
+        State:
+        <input
+          name="stateCode"
+          type="text"
+          value={props.InputValue}
+          onChange={props.FilterByState}
+        />
       </label>
       <label>
-        Genre
-        <select>
-          <option>Genre</option>
-        </select>
+        Genre:
+        <input
+          name="genre"
+          type="text"
+          value={props.InputValue}
+          onChange={props.FilterByGenre}
+        />
       </label>
       <label>
         Search:
@@ -21,7 +27,6 @@ const SearchBar = (props) => {
           name="search"
           type="text"
           value={props.InputValue}
-          onChange={props.FilterByState}
         />
       </label>
     </form>
