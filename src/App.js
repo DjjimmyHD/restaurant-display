@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RestaurantTable from "./Components/RestaurantTable";
 import "./App.css";
+import SearchBar from "./Components/SearchBar";
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +33,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Search and Filter Some to Most of the Things</h1>
         <section>
+          <SearchBar/>
           <RestaurantTable info={this.state.restaurants} />
         </section>
       </div>
