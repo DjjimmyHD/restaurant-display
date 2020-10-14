@@ -21,14 +21,14 @@ class RestaurantTable extends Component {
       filteredResults: nextProps.info,
     });
   }
-  handleChange = (e) => {
+  SearchName = (event) => {
     let currentList = [];
     let newList = [];
-    if (e.target.value !== "") {
+    if (event.target.value !== "") {
       currentList = this.props.info;
       newList = currentList.filter((restaurant) => {
         const lowercaseName = restaurant.name.toLowerCase();
-        const lowercaseNameInput = e.target.value.toLowerCase();
+        const lowercaseNameInput = event.target.value.toLowerCase();
         return lowercaseName.includes(lowercaseNameInput);
       });
     } else {
@@ -78,7 +78,7 @@ class RestaurantTable extends Component {
         <SearchBar
           FilterByGenre={this.FilterByGenre}
           FilterByState={this.FilterByState}
-          handleChange={this.handleChange}
+          SearchName={this.SearchName}
         />
         <table>
           <thead>

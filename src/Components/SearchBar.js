@@ -25,7 +25,7 @@ const SearchBar = (props) => {
           name="search"
           type="text"
           placeholder="Search..."
-          onChange={props.handleChange}
+          onChange={props.SearchName}
         />
       </label>
     </form>
