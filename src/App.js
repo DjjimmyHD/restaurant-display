@@ -37,20 +37,24 @@ class App extends Component {
     });
   }
   FilterByState = (event) => {
-    let fliterStates = this.state.restaurants.filter(
-      (restaurant) => restaurant.state.includes(`${event.target.value}`)
-    );
-    console.log(fliterStates)
+    let fliterStates = this.state.restaurants.filter((restaurant) => {
+      let lowercaseState = restaurant.state.toLowerCase();
+      let lowercaseStateInput = event.target.value.toLowerCase();
+      return lowercaseState.includes(lowercaseStateInput);
+    });
+    console.log(fliterStates);
     this.setState({
       InputValue: event.target.value,
       filteredRest: fliterStates,
     });
   };
   FilterByGenre = (event) => {
-    let fliterGenre = this.state.restaurants.filter(
-      (restaurant) => restaurant.genre.includes(`${event.target.value}`)
-    );
-    console.log(fliterGenre)
+    let fliterGenre = this.state.restaurants.filter((restaurant) => {
+      let lowercaseGenre = restaurant.genre.toLowerCase();
+      let lowercaseGenreInput = event.target.value.toLowerCase();
+      return lowercaseGenre.includes(lowercaseGenreInput);
+    });
+    console.log(fliterGenre);
     this.setState({
       InputValue: event.target.value,
       filteredRest: fliterGenre,
@@ -61,7 +65,10 @@ class App extends Component {
       <div className="App">
         <h1>Search and Filter Some to Most of the Things</h1>
         <section>
-          <SearchBar FilterByState={this.FilterByState} FilterByGenre={this.FilterByGenre} />
+          <SearchBar
+            FilterByState={this.FilterByState}
+            FilterByGenre={this.FilterByGenre}
+          />
           <RestaurantTable info={this.state.restaurants} />
         </section>
       </div>
