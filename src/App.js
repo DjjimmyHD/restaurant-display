@@ -47,12 +47,13 @@ class App extends Component {
     });
   };
   FilterByGenre = (event) => {
-    let fliterStates = this.state.restaurants.filter(
-      (restaurant) => restaurant.genre === `${event.target.value}`
+    let fliterGenre = this.state.restaurants.filter(
+      (restaurant) => restaurant.genre.includes(`${event.target.value}`)
     );
+    console.log(fliterGenre)
     this.setState({
       InputValue: event.target.value,
-      filteredRest: fliterStates,
+      filteredRest: fliterGenre,
     });
   };
   render() {
@@ -60,7 +61,7 @@ class App extends Component {
       <div className="App">
         <h1>Search and Filter Some to Most of the Things</h1>
         <section>
-          <SearchBar FilterByState={this.FilterByState} />
+          <SearchBar FilterByState={this.FilterByState} FilterByGenre={this.FilterByGenre} />
           <RestaurantTable info={this.state.restaurants} />
         </section>
       </div>
