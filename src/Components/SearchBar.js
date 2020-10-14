@@ -8,7 +8,6 @@ const SearchBar = (props) => {
         <input
           name="stateCode"
           type="text"
-          value={props.InputValue}
           onChange={props.FilterByState}
         />
       </label>
@@ -17,7 +16,6 @@ const SearchBar = (props) => {
         <input
           name="genre"
           type="text"
-          value={props.InputValue}
           onChange={props.FilterByGenre}
         />
       </label>
@@ -26,7 +24,8 @@ const SearchBar = (props) => {
         <input
           name="search"
           type="text"
-          value={props.InputValue}
+          placeholder="Search..."
+          onChange={props.handleChange}
         />
       </label>
     </form>
