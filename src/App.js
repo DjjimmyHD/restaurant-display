@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, { Component } from "react";
+import RestaurantTable from "./Components/RestaurantTable";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: []
+      restaurants: [],
     };
   }
   componentDidMount() {
@@ -14,16 +15,18 @@ class App extends Component {
         Authorization: "Api-Key q3MNxtfep8Gt",
       },
     })
-    .then((response) => response.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({ restaurants: data });
       });
   }
   render() {
     return (
-      <section>
-        <h1>I am here as a place holder fam</h1>
-      </section>
+      <div className="App">
+        <section>
+          <RestaurantTable info={this.state.restaurants} />
+        </section>
+      </div>
     );
   }
 }
