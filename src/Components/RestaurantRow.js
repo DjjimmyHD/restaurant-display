@@ -1,5 +1,5 @@
 import React from "react";
-import './RestaurantRow.css'
+import "./RestaurantRow.css";
 const RestaurantRow = (props) => {
   return (
     <tr>

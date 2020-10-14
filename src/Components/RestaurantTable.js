@@ -1,7 +1,7 @@
 import React from "react";
 import RestaurantRow from "./RestaurantRow";
-import "./RestaurantTable.css"
-const RestayurantTable = (props) => {
+import "./RestaurantTable.css";
+const RestaurantTable = (props) => {
   const item = props.info.map((info) => {
     return <RestaurantRow key={info.id} info={info} />;
   });
@@ -12,7 +12,7 @@ const RestayurantTable = (props) => {
           <th>Name</th>
           <th>City</th>
           <th>State</th>
-          <th>Phone Numner</th>
+          <th>Phone Number</th>
           <th>Genres</th>
         </tr>
       </thead>
@@ -20,4 +20,4 @@ const RestayurantTable = (props) => {
     </table>
   );
 };
-export default RestayurantTable;
+export default RestaurantTable;
