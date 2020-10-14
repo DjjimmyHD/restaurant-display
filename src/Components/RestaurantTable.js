@@ -15,6 +15,11 @@ class RestaurantTable extends Component {
       filteredResults: this.props.info,
     });
   }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      filteredResults: nextProps.info
+    });
+  }
   render() {
     return (
       <table>
@@ -28,11 +33,11 @@ class RestaurantTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {/* {this.filteredResults.map((filteredResult) => {
+          {this.state.filteredResults.map((filteredResult) => {
             return (
               <RestaurantRow key={filteredResult.id} info={filteredResult} />
             );
-          })} */}
+          })}
         </tbody>
       </table>
     );
