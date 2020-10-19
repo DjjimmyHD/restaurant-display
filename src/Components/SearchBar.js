@@ -1,23 +1,14 @@
 import React from "react";
-import "./SearchBar.css";
 const SearchBar = (props) => {
   return (
     <form>
       <label>
         State:
-        <input
-          name="stateCode"
-          type="text"
-          onChange={props.FilterByState}
-        />
+        <input name="stateCode" type="text" onChange={props.FilterByState} />
       </label>
       <label>
         Genre:
-        <input
-          name="genre"
-          type="text"
-          onChange={props.FilterByGenre}
-        />
+        <input name="genre" type="text" onChange={props.FilterByGenre} />
       </label>
       <label>
         Search:
