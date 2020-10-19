@@ -72,7 +72,7 @@ class App extends Component {
       newList = this.state.restaurants;
     }
     this.setState({
-      filteredResults: newList,
+      filteredRest: newList,
     });
   };
   FilterByState = (event) => {
@@ -89,7 +89,7 @@ class App extends Component {
       newList = this.state.restaurants;
     }
     this.setState({
-      filteredResults: newList,
+      filteredRest: newList,
     });
   };
 
